@@ -26,12 +26,13 @@ def mycrypt(message, decalage, newAlpha):
     ##### encrypt en cesar
     message = cesar.cesarEncrypt(message, decalage)
 
-    transKey = get_random_string(len(message))
-    message = transpositionCipher.encryptTrans("hh", message)
+    
+    
     #####encrypt dans un nouvelle alphabet
 
     message = alpha.alphaCrypt(message, newAlpha)
 
+    message = transpositionCipher.encryptTrans("hh", message)
 
     ##### creation de la clef
     randomIntSign = random.randint(0, len(randomSign) - 1)

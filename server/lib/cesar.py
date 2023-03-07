@@ -7,7 +7,7 @@ def cesarDecrypt(message, decalage):
     cryptArray=[]
     for char in list(message):
         newIndex = alphabetArray.index(char) - decalage
-        if newIndex <= 0:
+        if newIndex < 0:
             newIndex = newIndex + len(alphabetArray)
 
         cryptArray.append(alphabetArray[newIndex])
@@ -15,3 +15,9 @@ def cesarDecrypt(message, decalage):
     return ''.join(cryptArray)
 
 
+
+
+
+#lippad avphdlykadefe
+#lippsd svphdlyksdefe
+#hell

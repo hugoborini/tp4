@@ -30,7 +30,7 @@ newAlpha={
 " ":">",
 "o":"%",
 "p":".",
-"s":"-",
+"s":"P",
 "q":"ç",
 "r":"1",
 "u":"X",
@@ -73,10 +73,10 @@ def sendMessage(hostname, port, message):
 ############################ envoie d'un packet
 
 
-message="hello world hugo aba"
+message="hello world hugo borini cheikh aba badiane"
 
 
-info = myCrypt.mycrypt("hello hugo", 10, newAlpha)
+info = myCrypt.mycrypt(message, 4, newAlpha)
 
 
 

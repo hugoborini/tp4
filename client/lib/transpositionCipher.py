@@ -16,7 +16,7 @@ def encryptTrans(key,message):
                 matrix[i][y] = " "
             else:
                 if message[pointer] == " ":
-                    matrix[i][y] = "_"
+                    matrix[i][y] = " "
                 else:
                     matrix[i][y] = message[pointer]
 

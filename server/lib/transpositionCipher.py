@@ -26,6 +26,8 @@ def decryptTrans(message, key):
 
     decrypted = "".join(decrypted)
 
+    decrypted = decrypted.replace("_", " ")
+
 
 
     return decrypted

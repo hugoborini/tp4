@@ -74,10 +74,14 @@ def myDecrypt(message, key):
     info = deChrifKey(key)
 
 
-
+    
     message = alpha.alphaDecrypt(message, info["newAlpha"])
+    
     message = transpositionCipher.decryptTrans(message, info["keyTrans"])
     message = cesar.cesarDecrypt(message, info["decalage"])
+
+
+    
 
 
 
