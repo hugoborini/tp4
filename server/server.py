@@ -2,6 +2,12 @@ import socket
 import sys
 sys.path.insert(1, 'lib')
 from lib import cesar
+from lib import myCrypt
+
+
+#print(myCrypt.myDecrypt("1+@1ç%+$,@", "vxzjffjcfaoinu/@>94/@>dwqffopz/=>7,/=>budcd/@>4//@>eayppyreg/=>8#/=>hzyrn/=>4y/=>ghvvy//>46//>jcwtcajgpy//>9$//>asabdstn/#>7-/#>iurpvfjr//>7z//>xmewvurhwu//>99//>ldxrjrpet/#>8£/#>cvsescnv/!>7a/!>kidfhkiqsn//>9*//>mdtfxo/!>5?/!>nfgjbiuaqk/@>9!/@> mdgxkhszj/@>9>/@>obpmqi/@>5%/@>ppfwhz//>5.//>sagcjyft/@>7-/@>qhbxng/#>5ç/#>rzjzhz/@>51/@>uotzsp//>5X//>tekkrpp/#>62/#>wpxkmchuu/#>8_/#>zfitw/@>4</@>yzbrlmday/#>8@/#>visipyzg/=>7+/=>B=10--=éhh"))
+
+#exit(0)
 
 ###################### on definis notre hostname et le port pour le server
 hostname="localhost"
@@ -41,7 +47,13 @@ while True:
         messageCrypt = message.split(':')[1]
         print("message crypté : " + messageCrypt)
 
-    if algo == "cesar":
-        print("message decrypté : " + cesar.cesarDecrypt(messageCrypt, key))
+
+    if not messageCrypt == "":
+        if algo == "cesar":
+            print("message decrypté : " + cesar.cesarDecrypt(messageCrypt, key))
+        elif algo == "myalgo":
+
+            #print(myCrypt.myDecrypt(messageCrypt, key))
+            print("message decrypté : " + myCrypt.myDecrypt(messageCrypt, key))
 
 

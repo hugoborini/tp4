@@ -3,11 +3,43 @@ import sys
 import codecs
 sys.path.insert(1, 'lib')
 from lib import cesar
+from lib import myCrypt
 
 ###################### on definis notre hostname et le port pour le server
 hostname="localhost"
 port=1236
 
+
+##################### notre alphabet crypté
+newAlpha={
+"f":"4",
+"d":",",
+"b":"/",
+"e":"#",
+"h":"y",
+"g":"6",
+"j":"$",
+"a":"-",
+"i":"z",
+"x":"9",
+"l":"£",
+"c":"a",
+"k":"*",
+"m":"?",
+"n":"!",
+" ":">",
+"o":"%",
+"p":".",
+"s":"-",
+"q":"ç",
+"r":"1",
+"u":"X",
+"t":"2",
+"w":"_",
+"z":"<",
+"y":"@",
+"v":"+",
+}
 
 
 def connect(hostname, port):
@@ -40,13 +72,17 @@ def sendMessage(hostname, port, message):
 
 ############################ envoie d'un packet
 
-key=4
-algo="cesar"
-message="hello"
+
+message="hello world hugo aba"
+
+
+info = myCrypt.mycrypt("hello hugo", 10, newAlpha)
 
 
 
 
-sendMessage(hostname, port ,"key:4")
-sendMessage(hostname, port ,"algo:cesar")
-sendMessage(hostname, port ,"message:" + cesar.cesarEncrypt(message, key))
+
+
+sendMessage(hostname, port ,"key:" + info["key"])
+sendMessage(hostname, port ,"algo:myalgo")
+sendMessage(hostname, port ,"message:" + info["message"])
